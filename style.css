@@ -1,0 +1,251 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-image: url('bg.jpg');
+        /* Path to your background image */
+    background-size: cover;
+        /* This ensures the image covers the entire background */
+    background-repeat: no-repeat;
+        /* Prevents the image from repeating */
+    background-attachment: fixed;
+        /* Optional: This keeps the background fixed while scrolling */
+}
+
+.card {
+    width: 900px;
+    height: 650px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-perspective: 1200px;
+    perspective: 1200px;
+    transition: 1s;
+}
+
+.card:hover {
+    transform: rotate(-5deg);
+}
+
+.card:hover .outside {
+    transform: rotateY(-130deg);
+}
+
+.outside,
+.inside {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    left: 50.1%;
+}
+
+.inside {
+    background: linear-gradient(to right, #98FF99, #86F096 30%);
+    line-height: 3;
+    padding: 0 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    left: 50%;
+}
+
+.outside {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    z-index: 1;
+    transform-origin: left;
+    transition: 2s;
+    cursor: pointer;
+}
+
+.front,
+.back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+}
+
+.front {
+    background-color: #74E193;
+}
+
+.back {
+    transform: rotateY(180deg);
+    background: linear-gradient(to left, #62D28F, #50C38C 30%);
+}
+
+.cake {
+    width: 100%;
+    position: absolute;
+    bottom: 30px;
+}
+
+.top-layer,
+.middle-layer,
+.bottom-layer {
+    height: 80px;
+    width: 240px;
+    background-repeat: repeat;
+    background-size: 60px 100px;
+    background-position: 28px 0;
+    background-image: linear-gradient(transparent 50px,
+            #fedbab 50px,
+            #fedbab 60px,
+            transparent 60px),
+        radial-gradient(circle at 30px 5px, #994c10 30px, #fcbf29 31px);
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    margin: auto;
+}
+
+.middle-layer {
+    transform: scale(0.85);
+    top: 6px;
+}
+
+.top-layer {
+    transform: scale(0.7);
+    top: 26px;
+}
+
+.candle {
+    height: 45px;
+    width: 15px;
+    background: repeating-linear-gradient(45deg,
+            #fd3018 0,
+            #fd3018 5px,
+            #ffa89e 5px,
+            #ffa89e 10px);
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 202px;
+}
+
+.candle:before {
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    background-color: #ffa500;
+    border-radius: 0 50% 50% 50%;
+    bottom: 48px;
+    transform: rotate(45deg);
+    left: -1px;
+}
+
+.balloons {
+    position: absolute;
+}
+
+.balloon-1,
+.balloon-2,
+.balloon-3,
+.balloon-4 {
+    position: absolute;
+    width: 85px;
+    height: 95px;
+    border-radius: 50%;
+}
+
+.balloon-1 {
+    background-color: rgba(0, 77, 152);
+    left: 80px;
+    top: 40px;
+}
+
+.balloon-2 {
+    background-color: rgba(219, 0, 48);
+    left: 140px;
+    top: 10px;
+}
+
+.balloon-3 {
+    background-color: rgba(0, 77, 152);
+    left: 200px;
+    top: 40px;
+}
+
+.balloon-4 {
+    background-color: rgba(219, 0, 48);
+    left: 260px;
+    top: 10px;
+}
+
+.balloon-1::before,
+.balloon-2::before,
+.balloon-3::before,
+.balloon-4::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 155px;
+    background-color: #ffc848;
+    top: 95px;
+    left: 43px;
+}
+
+.balloon-1::after,
+.balloon-2::after,
+.balloon-3::after,
+.balloon-4::after {
+    content: "";
+    position: absolute;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    top: 94px;
+    left: 37px;
+}
+
+.balloon-1::after {
+    border-bottom: 10px solid #ff3e6b;
+}
+
+.balloon-2::after {
+    border-bottom: 10px solid #04b183;
+}
+
+.balloon-3::after {
+    border-bottom: 10px solid #ffc94c;
+}
+
+.balloon-4::after {
+    border-bottom: 10px solid #13a9bd;
+}
+
+.outside p {
+    font-size: 35px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    text-align: center;
+    letter-spacing: 5px;
+    color: #013220;
+    font-family: 'Baby Love', cursive;
+}
+
+.inside p {
+    font-size: 18px;
+    /* You can change this value */
+    line-height: 2;
+    /* Adjust line-height as needed */
+    color: #013220;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.inside h1 {
+    font-size: 85px;
+    line-height: 85px;
+}
